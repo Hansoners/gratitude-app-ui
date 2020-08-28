@@ -7,12 +7,19 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
+import { CardModule } from 'primeng/card';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { AccordionModule } from 'primeng/accordion';
 
 import { AppComponent } from './app.component';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
+import { PostListComponent } from './posts/post-list/post-list.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        PostCreateComponent,
+        PostListComponent
     ],
     imports: [
         BrowserModule,
@@ -22,7 +29,10 @@ import { AppComponent } from './app.component';
         HttpClientModule,
         InputTextModule,
         DialogModule,
-        ButtonModule
+        ButtonModule,
+        CardModule,
+        InputTextareaModule,
+        AccordionModule
     ],
     providers: [],
     bootstrap: [AppComponent]
