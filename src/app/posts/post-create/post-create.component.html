@@ -1,0 +1,15 @@
+<p-card>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+        <div class="p-formgroup-inline">
+            <div class="p-field">
+                <input pInputText type="text" name="title" ngModel required minlength="3" placeholder="Post Title"
+                    #title="ngModel">
+            </div>
+            <div class="p-field">
+                <textarea pInputTextarea [rows]="4" name="content" autoResize="autoResize" ngModel
+                    placeholder="Post Content" #content="ngModel"></textarea>
+            </div>
+            <button pButton type="submit" label="Submit"></button>
+        </div>
+    </form>
+</p-card>
