@@ -3,6 +3,8 @@
         <p-accordionTab header="{{ post.title }}">
             <p>{{ post.content }}</p>
             </p-accordionTab>
+            <button pButton type="button" label="Edit" [routerLink]="['/edit', post.id]"></button>
+            <button pButton type="button" label="Delete" (click)=onDelete(post.id)></button>
     </div>
 </p-accordion>
 
