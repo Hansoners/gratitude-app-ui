@@ -10,16 +10,22 @@ import { DialogModule } from 'primeng/dialog';
 import { CardModule } from 'primeng/card';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AccordionModule } from 'primeng/accordion';
-
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     declarations: [
         AppComponent,
         PostCreateComponent,
-        PostListComponent
+        PostListComponent,
+        HeaderComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
@@ -32,7 +38,10 @@ import { PostListComponent } from './posts/post-list/post-list.component';
         ButtonModule,
         CardModule,
         InputTextareaModule,
-        AccordionModule
+        AccordionModule,
+        ToastModule,
+        ToolbarModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
