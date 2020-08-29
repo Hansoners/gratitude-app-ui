@@ -29,7 +29,7 @@ export class PostCreateComponent implements OnInit {
         this.postId = paramMap.get('postId');
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(res => {
-          this.post = {id: res._id, title: res.title, content: res.content};
+          this.post = { id: res._id, title: res.title, content: res.content };
           this.isLoading = false;
         });
       } else {
@@ -54,5 +54,4 @@ export class PostCreateComponent implements OnInit {
     form.resetForm();
     this.isLoading = false;
   }
-
 }

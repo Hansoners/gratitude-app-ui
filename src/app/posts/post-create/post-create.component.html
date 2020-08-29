@@ -18,6 +18,8 @@
                         [ngModel]="post?.content" placeholder="Start writing..." #content="ngModel">
             </textarea>
                     <div class="submit-wrapper">
+                        <button pButton pRipple id="back-btn" type="button" label="Back" icon="pi pi-arrow-left"
+                        class="p-button-rounded p-button-secondary" [routerLink]="['/list']"></button>
                         <button pButton pRipple type="submit" label="Save" icon="pi pi-cloud"
                             class="p-button-rounded"></button>
                     </div>

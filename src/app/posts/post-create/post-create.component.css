@@ -46,3 +46,7 @@ textarea {
   left: calc(50% - 50px);
   z-index: 10000;
 }
+
+#back-btn {
+  margin-right: 5px;
+}
