@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+}
+
+.item-wrapper {
+  justify-content: center;
+  width: 35%;
+}
+
+.active-link {
+}
+
+.logo {
+  height: 70px;
+  margin-left: 50px;
+}
+
+span {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}

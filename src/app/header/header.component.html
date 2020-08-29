@@ -1,0 +1,22 @@
+<div class="container">
+    <p-toolbar [style]="{'background':'white'}">
+        <div class="p-toolbar-group-left item-wrapper">
+            <a routerLink="/" routerLinkActive="active-link">
+                <img class="logo" src="assets/logo_transparent.png">
+            </a>
+        </div>
+        <div class="p-toolbar-group-right item-wrapper">
+            <span>
+                <a routerLink="/create" routerLinkActive="active-link">
+                    <button pButton class="p-button-secondary p-button-rounded" icon="pi pi-pencil"></button>
+                </a>
+            </span>
+            <span>
+                <a routerLink="/list" routerLinkActive="active-link">
+                    <button pButton icon="pi pi-search" class="p-button-secondary p-button-rounded"></button>
+                </a>
+            </span>
+            <button pButton icon="pi pi-user" class="p-button-secondary p-button-rounded"></button>
+        </div>
+    </p-toolbar>
+</div>
