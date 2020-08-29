@@ -18,6 +18,9 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {OrderListModule} from 'primeng/orderlist';
+import {ListboxModule} from 'primeng/listbox';
 
 @NgModule({
     declarations: [
@@ -41,7 +44,10 @@ import { AppRoutingModule } from './app-routing.module';
         AccordionModule,
         ToastModule,
         ToolbarModule,
-        AppRoutingModule
+        AppRoutingModule,
+        ProgressSpinnerModule,
+        OrderListModule,
+        ListboxModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -16,6 +16,7 @@ export class PostCreateComponent implements OnInit {
   private mode = 'create';
   private postId: string;
   post: Post;
+  isLoading = false;
 
   constructor(public postsService: PostsService,
     private messageService: MessageService,
@@ -26,8 +27,10 @@ export class PostCreateComponent implements OnInit {
       if (paramMap.has('postId')) {
         this.mode = 'edit';
         this.postId = paramMap.get('postId');
+        this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(res => {
           this.post = {id: res._id, title: res.title, content: res.content};
+          this.isLoading = false;
         });
       } else {
         this.mode = 'create';
@@ -41,6 +44,7 @@ export class PostCreateComponent implements OnInit {
       this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry is invalid.' });
       return;
     }
+    this.isLoading = true;
     if (this.mode === 'create') {
       this.postsService.addPost(form.value.title, form.value.content);
     } else if (this.mode === 'edit') {
@@ -48,6 +52,7 @@ export class PostCreateComponent implements OnInit {
     }
     this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been saved.' });
     form.resetForm();
+    this.isLoading = false;
   }
 
 }

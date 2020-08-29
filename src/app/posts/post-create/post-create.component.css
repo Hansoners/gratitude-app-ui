@@ -1,6 +1,6 @@
 .main-container {
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .title {
@@ -25,17 +25,24 @@ textarea {
 }
 
 .divider-1 {
-    border-bottom: 1px solid grey;
-    height: 1px;
+  border-bottom: 1px solid grey;
+  height: 1px;
 }
 
 .divider-1 span {
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: rgb(145,196, 138);
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: rgb(145, 196, 138);
 }
 
 .submit-wrapper {
   float: right;
+}
+
+.spinner {
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  z-index: 10000;
 }
