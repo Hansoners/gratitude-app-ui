@@ -11,7 +11,7 @@
 
 .subtitle {
   color: rgb(156, 156, 156);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin: 10px 0;
 }
 
@@ -25,7 +25,7 @@ textarea {
 }
 
 .divider-1 {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(156, 156, 156);
   height: 1px;
 }
 

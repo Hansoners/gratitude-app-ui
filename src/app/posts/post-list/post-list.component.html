@@ -1,11 +1,32 @@
-<p-accordion [multiple]="true" *ngIf="posts.length > 0">
-    <div *ngFor="let post of posts">
-        <p-accordionTab header="{{ post.title }}">
-            <p>{{ post.content }}</p>
-            </p-accordionTab>
-            <button pButton type="button" label="Edit" [routerLink]="['/edit', post.id]"></button>
-            <button pButton type="button" label="Delete" (click)=onDelete(post.id)></button>
-    </div>
-</p-accordion>
+<div class="spinner">
+    <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+</div>
 
-<p *ngIf="posts.length <= 0">No posts added yet!</p>
+<div *ngIf="posts?.length > 0 && !isLoading">
+    <div class="search-wrapper animate__animated animate__fadeIn">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input type="text" pInputText placeholder="Search" [(ngModel)]="value3" />
+        </span>
+    </div>
+    <div *ngFor="let post of posts">
+        <div class="animate__animated animate__fadeIn">
+            <div class="card-wrapper">
+                <p-card>
+                    <div class="date-text">March 16, 2019</div>
+                    <div class="title-text">{{post.title}}</div>
+                    <div class="content-text">{{post.content}}</div>
+                    <div class="button-wrapper">
+                        <button pButton id="save-btn" icon="pi pi-pencil" type="button" class="p-button-rounded"
+                            [routerLink]="['/edit', post.id]"></button>
+                        <button pButton icon="pi pi-trash" type="button" (click)=onDelete(post.id)
+                            class="p-button-rounded p-button-danger">
+                        </button>
+                    </div>
+                </p-card>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <p *ngIf="posts?.length <= 0">No posts added yet!</p>

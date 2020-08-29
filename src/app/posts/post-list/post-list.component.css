@@ -1,0 +1,53 @@
+.spinner {
+  margin: auto;
+}
+
+.date-text {
+  float: right;
+  font-style: italic;
+  margin: 10px 10px 0;
+  font-size: 1.3em;
+}
+
+.title-text {
+  font-weight: bold;
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+.content-text {
+  margin: 10px;
+  font-size: 1em;
+  color: rgb(156, 156, 156);
+  display: block;
+  max-width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.button-wrapper {
+  text-align: right;
+}
+
+.button-wrapper button {
+  margin-right: 5px;
+}
+
+.card-wrapper {
+  border: 2px solid transparent; /* <- here */
+  transition: border 0.25s;
+  text-decoration: none; /* I added this for clarity of effect */
+  min-width: 200px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.card-wrapper:hover {
+  border: 2px solid rgb(246, 221, 80);
+}
+
+.search-wrapper {
+  width: 80%;
+  margin: 10px auto;
+}
