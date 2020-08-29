@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-post-list',
@@ -13,8 +15,18 @@ export class PostListComponent implements OnInit, OnDestroy {
   posts;
   isLoading = false;
   private postsSub: Subscription;
+  private animationItem: AnimationItem;
 
-  constructor(public postsService: PostsService) { }
+  options: AnimationOptions = {
+    path: '/assets/empty.json',
+  };
+
+  constructor(public postsService: PostsService) {
+  }
+
+  animationCreated(animationItem: AnimationItem): void {
+    this.animationItem = animationItem;
+  }
 
   ngOnInit() {
     this.posts = this.postsService.getPosts();

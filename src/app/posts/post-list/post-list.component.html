@@ -2,11 +2,18 @@
     <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
 </div>
 
+<div class="empty-wrapper" *ngIf="posts?.length === 0">
+    <div class="animation-wrapper animate__animated animate__fadeIn">
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+        <button pButton type="button" label="Start Writing" [routerLink]="['/create']" class="p-button-outlined p-button-lg"></button>
+    </div>
+</div>
+
 <div *ngIf="posts?.length > 0 && !isLoading">
     <div class="search-wrapper animate__animated animate__fadeIn">
         <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" [(ngModel)]="value3" />
+            <input type="text" pInputText placeholder="Search" />
         </span>
     </div>
     <div *ngFor="let post of posts">
@@ -27,6 +34,4 @@
             </div>
         </div>
     </div>
-    <div>
-
-        <p *ngIf="posts?.length <= 0">No posts added yet!</p>
+</div>

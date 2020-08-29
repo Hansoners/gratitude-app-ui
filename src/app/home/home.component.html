@@ -1,7 +1,9 @@
 <div class="main-container">
     <p-card>
-        <div class="animate__animated animate__fadeIn">
-            <img class="image" src="assets/solar.png">
+        <div class="title animate__animated animate__fadeIn animate__delay-1s">Welcome to Gratitude Journal</div>
+        <div class="image animate__animated animate__fadeIn">
+            <ng-lottie [options]="options" (loopComplete)="stop()" (animationCreated)="animationCreated($event)">
+            </ng-lottie>
         </div>
         <div class="animate__animated animate__fadeIn animate__delay-1s">
             <div class="open-quote">“</div>
@@ -17,7 +19,7 @@
                 Recent <a
                     href="https://ggsc.berkeley.edu/images/uploads/GGSC-JTF_White_Paper-Gratitude-FINAL.pdf">studies</a>
                 support a strong association between gratitude and an individual’s wellbeing. Use this journal to
-                cultivate gratitude and reflect on what you’re thankful for.
+                reflect on what you’re thankful for.
             </div>
             <p-footer>
                 <div class="btn-wrapper">

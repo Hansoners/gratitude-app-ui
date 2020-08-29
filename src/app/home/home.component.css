@@ -39,12 +39,15 @@ blockquote p {
   margin: 5% 20% 0;
   line-height: 2;
   text-align: center;
+  color: grey;
+  font-size: 1.1em;
 }
 
 .image {
   display: block;
   margin: 10px auto 50px;
   width: 250px;
+  border-radius: 100px;
 }
 
 .btn-wrapper {
@@ -55,4 +58,11 @@ blockquote p {
 
 body {
   margin: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  margin: 30px;
+  font-weight: bold;
 }

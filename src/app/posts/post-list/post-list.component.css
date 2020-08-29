@@ -1,5 +1,7 @@
 .spinner {
-  margin: auto;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
 }
 
 .date-text {
@@ -50,4 +52,15 @@
 .search-wrapper {
   width: 80%;
   margin: 10px auto;
+}
+
+.empty-wrapper {
+  margin: 30px auto;
+  width: 80%;
+  text-align: center;
+}
+
+.animation-wrapper {
+  width: 400px;
+  margin: auto;
 }

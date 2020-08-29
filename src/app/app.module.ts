@@ -19,8 +19,14 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-import {OrderListModule} from 'primeng/orderlist';
-import {ListboxModule} from 'primeng/listbox';
+import { OrderListModule } from 'primeng/orderlist';
+import { ListboxModule } from 'primeng/listbox';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web/build/player/lottie_svg';
+
+export function playerFactory() {
+    return player;
+  }
 
 @NgModule({
     declarations: [
@@ -36,6 +42,7 @@ import {ListboxModule} from 'primeng/listbox';
         FormsModule,
         TableModule,
         HttpClientModule,
+        LottieModule.forRoot({ player: playerFactory, useCache: true }),
         InputTextModule,
         DialogModule,
         ButtonModule,
