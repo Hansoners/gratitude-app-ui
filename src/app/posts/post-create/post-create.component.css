@@ -1,0 +1,41 @@
+.main-container {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title {
+  color: black;
+  margin: 10px 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.subtitle {
+  color: rgb(156, 156, 156);
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+
+input {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  margin: 10px 0 10px 0;
+}
+
+.divider-1 {
+    border-bottom: 1px solid grey;
+    height: 1px;
+}
+
+.divider-1 span {
+    display: block;
+    width: 40px;
+    height: 1px;
+    background-color: rgb(145,196, 138);
+}
+
+.submit-wrapper {
+  float: right;
+}

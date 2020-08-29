@@ -1,15 +1,24 @@
-<p-card>
-    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
-        <div class="p-formgroup-inline">
-            <div class="p-field">
-                <input pInputText type="text" name="title" ngModel required minlength="3" placeholder="Post Title"
-                    #title="ngModel">
+<div class="main-container">
+    <div class="p-d-flex p-flex-column">
+        <div class="p-mb-2">
+            <div class="title">April 08, 2019 - Monday</div>
+            <div class="divider-1"><span></span>
             </div>
-            <div class="p-field">
-                <textarea pInputTextarea [rows]="4" name="content" autoResize="autoResize" ngModel
-                    placeholder="Post Content" #content="ngModel"></textarea>
-            </div>
-            <button pButton type="submit" label="Submit"></button>
         </div>
-    </form>
-</p-card>
+        <div class="form-group">
+            <form (submit)="onSavePost(postForm)" #postForm="ngForm">
+                <div class="subtitle p-text-uppercase">What are you grateful for today?</div>
+                <input pInputText type="text" name="title" [ngModel]="post?.title" required minlength="3" placeholder="Pick a title..."
+                    #title="ngModel">
+                <textarea pInputTextarea name="content" [rows]="15" autoResize="autoResize" [ngModel]="post?.content"
+                    placeholder="Start writing..." #content="ngModel">
+            </textarea>
+                <div class="submit-wrapper">
+                    <button pButton pRipple type="submit" label="Save" icon="pi pi-cloud"
+                        class="p-button-rounded"></button>
+                </div>
+            </form>
+            <p-toast position="bottom-left"></p-toast>
+        </div>
+    </div>
+</div>
