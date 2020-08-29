@@ -1,0 +1,25 @@
+<div class="form-wrapper animate__animated animate__fadeIn">
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+        <p-card header="Login to your account">
+            <div class="p-col-12">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                    <input name="email" ngModel type="email" required email pInputText placeholder="Email"
+                        #emailInput="ngModel">
+                </div>
+            </div>
+            <div class="p-col-12">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                    <input name="password" ngModel type="password" required pInputText placeholder="Password"
+                        #passwordInput="ngModel" />
+                </div>
+            </div>
+            <p-footer>
+                <div class="p-col-12 center p-button-lg">
+                    <button pButton pRipple type="submit" id="submit-btn" type="submit" label="Login" icon="pi pi-check" iconPos="left"></button>
+                </div>
+            </p-footer>
+        </p-card>
+    </form>
+</div>

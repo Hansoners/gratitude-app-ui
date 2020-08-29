@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -20,13 +20,16 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { OrderListModule } from 'primeng/orderlist';
+import { PasswordModule } from 'primeng/password';
 import { ListboxModule } from 'primeng/listbox';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web/build/player/lottie_svg';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 
 export function playerFactory() {
     return player;
-  }
+}
 
 @NgModule({
     declarations: [
@@ -34,12 +37,15 @@ export function playerFactory() {
         PostCreateComponent,
         PostListComponent,
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        SignupComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
+        ReactiveFormsModule,
         TableModule,
         HttpClientModule,
         LottieModule.forRoot({ player: playerFactory, useCache: true }),
@@ -54,7 +60,8 @@ export function playerFactory() {
         AppRoutingModule,
         ProgressSpinnerModule,
         OrderListModule,
-        ListboxModule
+        ListboxModule,
+        PasswordModule
     ],
     providers: [],
     bootstrap: [AppComponent]
