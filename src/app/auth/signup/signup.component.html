@@ -18,13 +18,13 @@
             <p-footer>
                 <div class="p-col-12 center">
                     <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
-                    <button *ngIf="!isLoading" pButton pRipple class="p-button-lg" type="submit" id="submit-btn" type="submit" label="Register"
-                        icon="pi pi-check" iconPos="left"></button>
+                    <button *ngIf="!isLoading" pButton pRipple class="p-button-lg" type="submit" id="submit-btn"
+                        type="submit" label="Register" icon="pi pi-check" iconPos="left"></button>
                 </div>
             </p-footer>
         </p-card>
     </form>
-
     <p><i>Passwords are salted and hashed with bcrypt.</i></p>
-
 </div>
+
+<p-toast position="bottom-left"></p-toast>

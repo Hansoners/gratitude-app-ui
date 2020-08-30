@@ -17,9 +17,13 @@
             </div>
             <p-footer>
                 <div class="p-col-12 center">
-                    <button pButton pRipple class="p-button-lg" type="submit" id="submit-btn" type="submit" label="Login" icon="pi pi-check" iconPos="left"></button>
+                    <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+                    <button *ngIf="!isLoading" pButton pRipple class="p-button-lg" type="submit" id="submit-btn" type="submit"
+                        label="Login" icon="pi pi-check" iconPos="left"></button>
                 </div>
             </p-footer>
         </p-card>
     </form>
 </div>
+
+<p-toast position="bottom-left"></p-toast>
