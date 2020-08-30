@@ -1,4 +1,4 @@
-<p align="center">
+<p>
   <img alt="logomark" width="50%" src="https://raw.githubusercontent.com/Hansoners/gratitude-app-ui/master/src/assets/logo_transparent.png" />
 </p>
 <h2>
