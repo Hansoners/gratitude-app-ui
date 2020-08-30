@@ -40,7 +40,7 @@ export function playerFactory() {
         HeaderComponent,
         HomeComponent,
         SignupComponent,
-        LoginComponent
+        LoginComponent,
     ],
     imports: [
         BrowserModule,
