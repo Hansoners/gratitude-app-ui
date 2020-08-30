@@ -1,4 +1,4 @@
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -14,7 +14,6 @@ import player from 'lottie-web/build/player/lottie_svg';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { PrimeNgModule } from './primeng.module';
 import { PostsModule } from './posts/posts.module';
-
 
 export function playerFactory() {
     return player;
@@ -35,7 +34,8 @@ export function playerFactory() {
         PrimeNgModule,
         PostsModule
     ],
-    providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, MessageService],
+    providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        MessageService, ConfirmationService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

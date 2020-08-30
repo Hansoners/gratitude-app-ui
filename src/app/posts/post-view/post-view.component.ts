@@ -29,7 +29,6 @@ export class PostViewComponent implements OnInit {
 
   onDelete() {
     this.postsService.deletePost(this.postId);
-    this.router.navigate(['/list']);
   }
 
 }

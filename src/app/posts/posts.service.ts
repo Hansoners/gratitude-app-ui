@@ -1,4 +1,4 @@
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
@@ -17,7 +17,8 @@ export class PostsService {
 
     constructor(private http: HttpClient,
         private router: Router,
-        private messageService: MessageService) { }
+        private messageService: MessageService,
+        private confirmationService: ConfirmationService) { }
 
     getPosts() {
         // this.http
@@ -103,14 +104,21 @@ export class PostsService {
     }
 
     deletePost(postId: string) {
-        this.http.delete(BACKEND_URL + postId)
-            .subscribe(() => {
-                const updatedPosts = this.posts.filter(post => post.id !== postId);
-                this.posts = updatedPosts;
-                this.postsUpdated.next([...this.posts]);
-                this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been deleted.' });
-            }, error => {
-                this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry has not been deleted.' });
-            });
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete this entry?',
+            accept: () => {
+                this.http.delete(BACKEND_URL + postId)
+                    .subscribe(() => {
+                        const updatedPosts = this.posts.filter(post => post.id !== postId);
+                        this.posts = updatedPosts;
+                        this.postsUpdated.next([...this.posts]);
+                        this.router.navigate(['/list']);
+                        this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been deleted.' });
+                    }, error => {
+                        this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry has not been deleted.' });
+                    });
+            }
+        });
+
     }
 }

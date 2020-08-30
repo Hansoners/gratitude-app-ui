@@ -12,6 +12,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { OrderListModule } from 'primeng/orderlist';
 import { PasswordModule } from 'primeng/password';
 import { ListboxModule } from 'primeng/listbox';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { ListboxModule } from 'primeng/listbox';
         ProgressSpinnerModule,
         OrderListModule,
         ListboxModule,
-        PasswordModule
+        PasswordModule,
+        ConfirmDialogModule
     ],
     exports: [
         TableModule,
@@ -42,7 +44,8 @@ import { ListboxModule } from 'primeng/listbox';
         ProgressSpinnerModule,
         OrderListModule,
         ListboxModule,
-        PasswordModule
+        PasswordModule,
+        ConfirmDialogModule
     ]
 })
 export class PrimeNgModule { }

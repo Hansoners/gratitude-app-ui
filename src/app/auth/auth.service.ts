@@ -1,4 +1,4 @@
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -19,7 +19,8 @@ export class AuthService {
 
   constructor(private http: HttpClient,
     private router: Router,
-    private messageService: MessageService) { }
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService) { }
 
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
@@ -75,13 +76,18 @@ export class AuthService {
     }
   }
   logoutUser() {
-    this.token = null;
-    this.isAuth = false;
-    this.userId = null;
-    this.authStatusListener.next(false);
-    this.router.navigate(['/']);
-    clearTimeout(this.tokenTimer);
-    this.clearAuthData();
+    this.confirmationService.confirm({
+      message: 'Are you sure you want to log out?',
+      accept: () => {
+        this.token = null;
+        this.isAuth = false;
+        this.userId = null;
+        this.authStatusListener.next(false);
+        this.router.navigate(['/']);
+        clearTimeout(this.tokenTimer);
+        this.clearAuthData();
+      }
+    });
   }
 
   getToken() {
