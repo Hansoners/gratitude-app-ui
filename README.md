@@ -1,4 +1,4 @@
-<p align="center">
+<p>
   <img alt="logomark" width="50%" src="https://raw.githubusercontent.com/Hansoners/gratitude-app-ui/master/src/assets/logo_transparent.png" />
 </p>
 <h2>
@@ -6,6 +6,8 @@
 </h2>
 
 Gratitude Journal is a simple journaling app developed using the MEAN stack.
+
+Click <a href="https://github.com/Hansoners/gratitude-app-api">here</a> for the Node.js backend code.
 
 <p align="center">
   <img
