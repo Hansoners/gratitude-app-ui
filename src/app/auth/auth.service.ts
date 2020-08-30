@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -16,7 +17,9 @@ export class AuthService {
   private userId: string;
   private authStatusListener = new Subject<boolean>();
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient,
+    private router: Router,
+    private messageService: MessageService) { }
 
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
@@ -27,8 +30,10 @@ export class AuthService {
     this.http.post(BACKEND_URL + 'register', authData)
       .subscribe(response => {
         this.loginUser(email, password);
+        this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'You\'re registered!' });
       }, error => {
         this.authStatusListener.next(false);
+        this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Registration failed.' });
       });
   }
 
@@ -50,6 +55,7 @@ export class AuthService {
         }
       }, error => {
         this.authStatusListener.next(false);
+        this.messageService.add({ severity: 'error', summary: 'Login Failed!', detail: 'Please check your account information.' });
       });
   }
 

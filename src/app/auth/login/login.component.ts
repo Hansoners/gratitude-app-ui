@@ -6,8 +6,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [MessageService]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit, OnDestroy {
   authStatusSub: any;
@@ -19,7 +18,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
       authStatus => {
         this.isLoading = false;
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid login.' });
       }
     );
   }
@@ -30,6 +28,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
     this.authService.loginUser(form.value.email, form.value.password);
+    this.messageService.add({ severity: 'success', summary: 'Logged in!', detail: 'Welcome!' });
   }
 
   ngOnDestroy(): void {

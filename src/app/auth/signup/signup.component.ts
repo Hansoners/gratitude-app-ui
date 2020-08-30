@@ -7,8 +7,7 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
-  providers: [MessageService]
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit, OnDestroy {
 
@@ -21,7 +20,6 @@ export class SignupComponent implements OnInit, OnDestroy {
     this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
       authStatus => {
         this.isLoading = false;
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Email already in use.' });
       }
     );
   }
