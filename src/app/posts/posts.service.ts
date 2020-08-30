@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 const BACKEND_URL = environment.apiUrl + '/posts/';
- 
+
 @Injectable({ providedIn: 'root' })
 export class PostsService {
     private posts: Post[] = [];
@@ -27,7 +27,8 @@ export class PostsService {
                         title: post.title,
                         content: post.content,
                         id: post._id,
-                        creator: post.creator
+                        creator: post.creator,
+                        date: post.date
                     };
                 });
             }))
@@ -38,7 +39,7 @@ export class PostsService {
     }
 
     getPost(id: string) {
-        return this.http.get<{ _id: string, title: string, content: string, creator: string }>
+        return this.http.get<{ _id: string, title: string, content: string, creator: string, date: number }>
             (BACKEND_URL + id);
     }
 
@@ -46,8 +47,8 @@ export class PostsService {
         return this.postsUpdated.asObservable();
     }
 
-    addPost(title: string, content: string) {
-        const post: Post = { id: null, title: title, content: content, creator: null };
+    addPost(title: string, content: string, date: number) {
+        const post: Post = { id: null, title: title, content: content, creator: null, date: date };
         this.http
             .post<{ message: string, postId: string }>(BACKEND_URL, post)
             .subscribe(res => {
@@ -58,8 +59,8 @@ export class PostsService {
             });
     }
 
-    updatePost(id: string, title: string, content: string) {
-        const post: Post = { id: id, title: title, content: content, creator: null};
+    updatePost(id: string, title: string, content: string, date: number) {
+        const post: Post = { id: id, title: title, content: content, creator: null, date: date };
         this.http.put(BACKEND_URL + id, post).subscribe(res => {
             const updatedPosts = [...this.posts];
             const oldPostIdx = updatedPosts.findIndex(p => p.id === post.id);

@@ -5,6 +5,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PrimeNgModule } from '../primeng.module';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import player from 'lottie-web/build/player/lottie_svg';
+import { LottieModule } from 'ngx-lottie';
+
+export function playerFactory() {
+    return player;
+}
 
 @NgModule({
     declarations: [
@@ -16,7 +22,8 @@ import { RouterModule } from '@angular/router';
         ReactiveFormsModule,
         PrimeNgModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+        LottieModule.forRoot({ player: playerFactory, useCache: true }),
     ]
 })
 export class PostsModule { }

@@ -13,6 +13,7 @@ import { Post } from '../post.model';
 })
 export class PostCreateComponent implements OnInit {
 
+  myDate: number;
   private mode = 'create';
   private postId: string;
   post: Post;
@@ -23,13 +24,14 @@ export class PostCreateComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.myDate = Date.now();
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('postId')) {
         this.mode = 'edit';
         this.postId = paramMap.get('postId');
         this.isLoading = true;
         this.postsService.getPost(this.postId).subscribe(res => {
-          this.post = { id: res._id, title: res.title, content: res.content, creator: res.creator};
+          this.post = { id: res._id, title: res.title, content: res.content, creator: res.creator, date: res.date};
           this.isLoading = false;
         });
       } else {
@@ -46,9 +48,9 @@ export class PostCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      this.postsService.addPost(form.value.title, form.value.content);
+      this.postsService.addPost(form.value.title, form.value.content, this.myDate);
     } else if (this.mode === 'edit') {
-      this.postsService.updatePost(this.postId, form.value.title, form.value.content);
+      this.postsService.updatePost(this.postId, form.value.title, form.value.content, this.post.date);
     }
     this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been saved.' });
     form.resetForm();

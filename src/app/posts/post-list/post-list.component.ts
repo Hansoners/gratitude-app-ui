@@ -18,18 +18,12 @@ export class PostListComponent implements OnInit, OnDestroy {
   userId: string;
   isUserAuth = false;
   private postsSub: Subscription;
-  private authStatusSub: Subscription;
-  private animationItem: AnimationItem;
 
   options: AnimationOptions = {
     path: '/assets/empty.json',
   };
 
   constructor(public postsService: PostsService, private authService: AuthService) {
-  }
-
-  animationCreated(animationItem: AnimationItem): void {
-    this.animationItem = animationItem;
   }
 
   ngOnInit() {
@@ -41,10 +35,6 @@ export class PostListComponent implements OnInit, OnDestroy {
         this.posts = posts;
         this.isLoading = false;
       });
-    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(isAuth => {
-      this.isUserAuth = isAuth;
-      this.userId = this.authService.getUserId();
-    });
   }
 
   onDelete(postId: string) {
