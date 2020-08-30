@@ -1,19 +1,22 @@
+import { MessageService } from 'primeng/api';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Post } from '../post.model';
 import { PostsService } from '../posts.service';
-import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css']
+  styleUrls: ['./post-list.component.css'],
+  providers: [MessageService]
 })
 export class PostListComponent implements OnInit, OnDestroy {
   posts;
+  addedPost = false;
   isLoading = false;
   userId: string;
   isUserAuth = false;
@@ -23,7 +26,8 @@ export class PostListComponent implements OnInit, OnDestroy {
     path: '/assets/empty.json',
   };
 
-  constructor(public postsService: PostsService, private authService: AuthService) {
+  constructor(public postsService: PostsService,
+    private authService: AuthService) {
   }
 
   ngOnInit() {

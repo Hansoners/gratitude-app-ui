@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -34,7 +35,7 @@ export function playerFactory() {
         PrimeNgModule,
         PostsModule
     ],
-    providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+    providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }, MessageService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

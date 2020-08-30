@@ -8,8 +8,7 @@ import { Post } from '../post.model';
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
-  styleUrls: ['./post-create.component.css'],
-  providers: [MessageService]
+  styleUrls: ['./post-create.component.css']
 })
 export class PostCreateComponent implements OnInit {
 
@@ -52,7 +51,6 @@ export class PostCreateComponent implements OnInit {
     } else if (this.mode === 'edit') {
       this.postsService.updatePost(this.postId, form.value.title, form.value.content, this.post.date);
     }
-    this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been saved.' });
     form.resetForm();
     this.isLoading = false;
   }

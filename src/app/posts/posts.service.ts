@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
@@ -14,7 +15,9 @@ export class PostsService {
     private posts: Post[] = [];
     private postsUpdated = new Subject<Post[]>();
 
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private http: HttpClient,
+        private router: Router,
+        private messageService: MessageService) { }
 
     getPosts() {
         // this.http
@@ -77,7 +80,10 @@ export class PostsService {
                 post.id = res.postId;
                 this.posts.push(post);
                 this.postsUpdated.next([...this.posts]);
-                this.router.navigate(['/list']);
+                this.router.navigate(['/list'], { queryParams: { success: true } });
+                this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been added!' });
+            }, error => {
+                this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry has not been added.' });
             });
     }
 
@@ -90,6 +96,9 @@ export class PostsService {
             this.posts = updatedPosts;
             this.postsUpdated.next([...this.posts]);
             this.router.navigate(['/list']);
+            this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has updated.' });
+        }, error => {
+            this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry has not been updated.' });
         });
     }
 
@@ -99,6 +108,9 @@ export class PostsService {
                 const updatedPosts = this.posts.filter(post => post.id !== postId);
                 this.posts = updatedPosts;
                 this.postsUpdated.next([...this.posts]);
+                this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'Your entry has been deleted.' });
+            }, error => {
+                this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Your entry has not been deleted.' });
             });
     }
 }
