@@ -1,0 +1,19 @@
+<div class="main-container animate__animated animate__fadeIn">
+    <p-card>
+        <div class="title animate__animated animate__fadeIn">Let's get writing!</div>
+        <div class="image animate__animated animate__fadeIn">
+            <ng-lottie [options]="options">
+            </ng-lottie>
+        </div>
+        <div class="animate__animated animate__fadeIn">
+            <div class="subtitle">
+                <b>Welcome!</b><br>Gratitude Journal is a personal journal to keep track of what you're grateful for everyday.
+            </div>
+            <p-footer>
+                <div class="btn-wrapper">
+                    <button [routerLink]="['/create']" pButton type="button" label="Start Writing" class="p-button-primary p-button-lg"></button>
+                </div>
+            </p-footer>
+        </div>
+    </p-card>
+</div>
