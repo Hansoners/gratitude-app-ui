@@ -17,9 +17,31 @@ export class PostsService {
     constructor(private http: HttpClient, private router: Router) { }
 
     getPosts() {
+        // this.http
+        //     .get<{ message: string; posts: any }>(
+        //         BACKEND_URL
+        //     )
+        //     .pipe(map((postData) => {
+        //         return postData.posts.map(post => {
+        //             return {
+        //                 title: post.title,
+        //                 content: post.content,
+        //                 id: post._id,
+        //                 creator: post.creator,
+        //                 date: post.date
+        //             };
+        //         });
+        //     }))
+        //     .subscribe(transformedPosts => {
+        //         this.posts = transformedPosts;
+        //         this.postsUpdated.next([...this.posts]);
+        //     });
+    }
+
+    getPostsByUserId(userId: string) {
         this.http
             .get<{ message: string; posts: any }>(
-                BACKEND_URL
+                BACKEND_URL + 'user/' + userId
             )
             .pipe(map((postData) => {
                 return postData.posts.map(post => {

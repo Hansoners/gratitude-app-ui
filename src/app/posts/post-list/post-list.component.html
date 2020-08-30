@@ -2,12 +2,14 @@
     <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
 </div>
 
-<div class="empty-wrapper" *ngIf="posts?.length === 0">
-    <div class="animation-wrapper animate__animated animate__fadeIn">
-        <ng-lottie [options]="options"></ng-lottie>
-        <button pButton type="button" label="Start Writing" [routerLink]="['/create']"
-            class="p-button-outlined p-button-lg"></button>
-    </div>
+<div class="empty-wrapper animate__animated animate__fadeIn" *ngIf="posts?.length < 1 && !isLoading">
+    <p-card>
+        <div class="animation-wrapper">
+            <div class="empty-text">No posts have been written yet!</div>
+            <ng-lottie [options]="options"></ng-lottie>
+            <button pButton type="button" label="Start Writing" [routerLink]="['/create']" class="p-button-lg"></button>
+        </div>
+    </p-card>
 </div>
 
 <div *ngIf="posts?.length > 0 && !isLoading">
@@ -25,8 +27,8 @@
                     <div class="title-text">{{post.title}}</div>
                     <div class="content-text">{{post.content}}</div>
                     <div class="button-wrapper">
-                        <button pButton id="view-btn" icon="pi pi-eye" type="button" class="p-button-rounded p-button-secondary"
-                        [routerLink]="['/view', post.id]"></button>
+                        <button pButton id="view-btn" icon="pi pi-eye" type="button"
+                            class="p-button-rounded p-button-secondary" [routerLink]="['/view', post.id]"></button>
                         <button pButton id="save-btn" icon="pi pi-pencil" type="button" class="p-button-rounded"
                             [routerLink]="['/edit', post.id]"></button>
                         <button pButton icon="pi pi-trash" type="button" (click)=onDelete(post.id)

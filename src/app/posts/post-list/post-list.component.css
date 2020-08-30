@@ -1,7 +1,13 @@
 .spinner {
-  margin: 0 auto;
+  margin: auto;
   width: 80%;
   text-align: center;
+}
+
+.empty-text {
+  margin: 10px;
+  color: grey;
+  font-size: 1em;
 }
 
 .date-text {
