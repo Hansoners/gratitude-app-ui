@@ -26,7 +26,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http.post(BACKEND_URL + 'register', authData)
       .subscribe(response => {
-        this.router.navigate(['/app']);
+        this.loginUser(email, password);
       }, error => {
         this.authStatusListener.next(false);
       });

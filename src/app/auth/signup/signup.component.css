@@ -8,3 +8,9 @@
     max-width: 800px;
     min-width: 400px;
 }
+
+.small-text {
+    margin: 10px;
+    color: grey;
+    font-size: 1em;
+}
