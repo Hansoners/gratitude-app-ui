@@ -5,7 +5,8 @@
 <div class="empty-wrapper" *ngIf="posts?.length === 0">
     <div class="animation-wrapper animate__animated animate__fadeIn">
         <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
-        <button pButton type="button" label="Start Writing" [routerLink]="['/create']" class="p-button-outlined p-button-lg"></button>
+        <button pButton type="button" label="Start Writing" [routerLink]="['/create']"
+            class="p-button-outlined p-button-lg"></button>
     </div>
 </div>
 
@@ -18,7 +19,7 @@
     </div>
     <div *ngFor="let post of posts">
         <div class="animate__animated animate__fadeIn">
-            <div class="card-wrapper">
+            <div class="card-wrapper" *ngIf="userId == post.creator">
                 <p-card>
                     <div class="date-text">March 16, 2019</div>
                     <div class="title-text">{{post.title}}</div>
