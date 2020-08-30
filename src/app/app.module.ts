@@ -24,7 +24,7 @@ export function playerFactory() {
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomeComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

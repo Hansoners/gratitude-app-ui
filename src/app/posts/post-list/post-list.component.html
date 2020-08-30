@@ -7,7 +7,8 @@
         <div class="animation-wrapper">
             <div class="empty-text">No posts have been written yet!</div>
             <ng-lottie [options]="options"></ng-lottie>
-            <button pButton type="button" label="Start Writing" [routerLink]="['/create']" class="p-button-lg p-button-rounded"></button>
+            <button pButton type="button" label="Start Writing" [routerLink]="['/create']"
+                class="p-button-lg p-button-rounded"></button>
         </div>
     </p-card>
 </div>
@@ -16,10 +17,10 @@
     <div class="search-wrapper animate__animated animate__fadeIn">
         <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
-            <input type="text" pInputText placeholder="Search" />
+            <input type="text" pInputText placeholder="Search" [(ngModel)]="searchText" />
         </span>
     </div>
-    <div *ngFor="let post of posts.slice().reverse()">
+    <div *ngFor="let post of posts.slice().reverse() | searchFilter: searchText">
         <div class="animate__animated animate__fadeIn">
             <div class="card-wrapper" *ngIf="userId == post.creator">
                 <p-card>
@@ -40,4 +41,3 @@
         </div>
     </div>
 </div>
-

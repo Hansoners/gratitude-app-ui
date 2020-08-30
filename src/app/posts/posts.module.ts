@@ -1,4 +1,4 @@
-import { MessageService } from 'primeng/api';
+import { FilterPipe } from './filter.pipe';
 import { NgModule } from '@angular/core';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostListComponent } from './post-list/post-list.component';
@@ -21,6 +21,7 @@ export function playerFactory() {
         PostListComponent,
         PostHomeComponent,
         PostViewComponent,
+        FilterPipe
     ],
     imports: [
         CommonModule,
@@ -29,6 +30,7 @@ export function playerFactory() {
         RouterModule,
         FormsModule,
         LottieModule.forRoot({ player: playerFactory, useCache: true }),
-    ]
+    ],
+    providers: [FilterPipe]
 })
 export class PostsModule { }

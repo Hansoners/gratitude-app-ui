@@ -20,6 +20,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   isLoading = false;
   userId: string;
   isUserAuth = false;
+  searchText = '';
   private postsSub: Subscription;
 
   options: AnimationOptions = {
@@ -36,7 +37,7 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.posts = this.postsService.getPostsByUserId(this.userId);
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[]) => {
-        this.posts = posts;
+        this.posts = posts.filter(p => p.title.startsWith(this.searchText));
         this.isLoading = false;
       });
   }
