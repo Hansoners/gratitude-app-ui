@@ -4,7 +4,7 @@
 
 <div class="empty-wrapper" *ngIf="posts?.length === 0">
     <div class="animation-wrapper animate__animated animate__fadeIn">
-        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+        <ng-lottie [options]="options"></ng-lottie>
         <button pButton type="button" label="Start Writing" [routerLink]="['/create']"
             class="p-button-outlined p-button-lg"></button>
     </div>
@@ -25,6 +25,8 @@
                     <div class="title-text">{{post.title}}</div>
                     <div class="content-text">{{post.content}}</div>
                     <div class="button-wrapper">
+                        <button pButton id="view-btn" icon="pi pi-eye" type="button" class="p-button-rounded p-button-secondary"
+                        [routerLink]="['/view', post.id]"></button>
                         <button pButton id="save-btn" icon="pi pi-pencil" type="button" class="p-button-rounded"
                             [routerLink]="['/edit', post.id]"></button>
                         <button pButton icon="pi pi-trash" type="button" (click)=onDelete(post.id)

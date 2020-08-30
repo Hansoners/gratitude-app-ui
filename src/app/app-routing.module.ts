@@ -1,3 +1,5 @@
+import { PostViewComponent } from './posts/post-view/post-view.component';
+import { PostHomeComponent } from './posts/post-home/post-home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -7,10 +9,12 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'app', component: PostHomeComponent, canActivate: [AuthGuard] },
     { path: 'create', component: PostCreateComponent, canActivate: [AuthGuard] },
     { path: 'edit/:postId', component: PostCreateComponent, canActivate: [AuthGuard] },
+    { path: 'view/:postId', component: PostViewComponent, canActivate: [AuthGuard] },
     { path: 'list', component: PostListComponent, canActivate: [AuthGuard] },
-    { path: 'auth', loadChildren: './auth/auth.module#AuthModule'}
+    { path: 'auth', loadChildren: './auth/auth.module#AuthModule' }
 ];
 
 @NgModule({

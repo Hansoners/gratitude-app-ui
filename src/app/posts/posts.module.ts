@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import player from 'lottie-web/build/player/lottie_svg';
 import { LottieModule } from 'ngx-lottie';
+import { PostHomeComponent } from './post-home/post-home.component';
+import { PostViewComponent } from './post-view/post-view.component';
 
 export function playerFactory() {
     return player;
@@ -16,6 +18,8 @@ export function playerFactory() {
     declarations: [
         PostCreateComponent,
         PostListComponent,
+        PostHomeComponent,
+        PostViewComponent,
     ],
     imports: [
         CommonModule,

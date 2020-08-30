@@ -1,7 +1,7 @@
 <div class="container">
     <p-toolbar [style]="{'background':'white'}">
         <div class="p-toolbar-group-left item-wrapper">
-            <a routerLink="/" routerLinkActive="active-link">
+            <a [routerLink]="userIsAuth ? '/app' : '/'" routerLinkActive="active-link">
                 <img class="logo" src="assets/logo_transparent.png">
             </a>
         </div>

@@ -26,7 +26,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http.post(BACKEND_URL + 'register', authData)
       .subscribe(response => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/app']);
       }, error => {
         this.authStatusListener.next(false);
       });
@@ -46,7 +46,7 @@ export class AuthService {
           const now = new Date();
           const expiration = new Date(now.getTime() + expiresInDuration * 1000);
           this.saveAuthData(this.token, expiration, this.userId);
-          this.router.navigate(['/']);
+          this.router.navigate(['/app']);
         }
       }, error => {
         this.authStatusListener.next(false);
