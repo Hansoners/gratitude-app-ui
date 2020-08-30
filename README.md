@@ -5,7 +5,7 @@
   Personal Journaling Application
 </h2>
 
-Gratitude Journal is a simple journaling app developed using the MEAN stack.
+Gratitude Journal is a simple journaling app developed using the MEAN stack. Click <a href="https://github.com/Hansoners/gratitude-app-api">here</a> for the code for the backend.
 
 <p align="center">
   <img
