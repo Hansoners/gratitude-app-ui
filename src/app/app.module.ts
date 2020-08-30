@@ -14,6 +14,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
 import { PrimeNgModule } from './primeng.module';
 import { PostsModule } from './posts/posts.module';
 
+
 export function playerFactory() {
     return player;
 }

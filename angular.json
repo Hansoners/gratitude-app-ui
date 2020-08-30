@@ -29,6 +29,7 @@
                 "node_modules/primeflex/primeflex.css",
                 "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
                 "node_modules/animate.css/animate.css",
+                "node_modules/eva-icons/style/eva-icons.css",
                 "src/styles.css"
               ],
               "scripts": []
