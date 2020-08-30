@@ -1,0 +1,46 @@
+.main-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.date-title {
+  color: black;
+  margin: 10px 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.heading {
+    color: rgb(89, 89, 89);
+    font-size: 1em;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+.title-text {
+  color: rgb(89, 89, 89);
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.content-text {
+    color: rgb(126, 126, 126);
+    font-size: 1.1rem;
+    margin: 10px 0;
+  }
+
+.divider-1 {
+  margin-top: 10px;
+  border-bottom: 1px solid rgb(156, 156, 156);
+  height: 1px;
+}
+
+.divider-1 span {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: rgb(145, 196, 138);
+}
+
+#btn {
+    float: right;
+}

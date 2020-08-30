@@ -1,0 +1,18 @@
+<div class="main-container animate__animated animate__fadeIn">
+    <div class="p-d-flex p-flex-column">
+        <div class="p-mb-2 heading">Here's what you wrote on...</div>
+        <div class="p-mb-2 date-title">
+            {{post?.date | date:'fullDate'}}
+            <button id="btn" (click)="onDelete()" pButton pRipple type="button" icon="pi pi-trash"
+                class="p-button-rounded p-button-text p-button-danger"></button>
+            <button id="btn" [routerLink]="['/edit', post?.id]" pButton pRipple type="button" icon="pi pi-pencil"
+                class="p-button-rounded p-button-text"></button>
+            <button id="btn" [routerLink]="['/list']" pButton pRipple type="button" icon="pi pi-arrow-left"
+                class="p-button-rounded p-button-text p-button-secondary"></button>
+            <div class="divider-1"><span></span>
+            </div>
+        </div>
+        <div class="p-mb-2 title-text">{{post?.title}}</div>
+        <div class="p-mb-2 content-text">{{post?.content}}</div>
+
+    </div>
