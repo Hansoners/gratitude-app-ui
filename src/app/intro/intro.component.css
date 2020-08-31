@@ -39,3 +39,12 @@
 i {
   margin: 0 3px;
 }
+
+a {
+  color: rgb(223, 143, 81);
+  text-decoration: none;
+}
+
+.heart {
+  color: rgb(237, 101, 95);
+}
