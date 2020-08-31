@@ -14,6 +14,7 @@ import player from 'lottie-web/build/player/lottie_svg';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { PrimeNgModule } from './primeng.module';
 import { PostsModule } from './posts/posts.module';
+import { IntroComponent } from './intro/intro.component';
 
 export function playerFactory() {
     return player;
@@ -23,7 +24,8 @@ export function playerFactory() {
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        IntroComponent
     ],
     imports: [
         BrowserModule,
@@ -32,7 +34,7 @@ export function playerFactory() {
         LottieModule.forRoot({ player: playerFactory, useCache: true }),
         AppRoutingModule,
         PrimeNgModule,
-        PostsModule
+        PostsModule,
     ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         MessageService, ConfirmationService],

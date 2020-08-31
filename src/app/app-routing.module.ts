@@ -1,3 +1,4 @@
+import { IntroComponent } from './intro/intro.component';
 import { PostViewComponent } from './posts/post-view/post-view.component';
 import { PostHomeComponent } from './posts/post-home/post-home.component';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: IntroComponent },
     { path: 'app', component: PostHomeComponent, canActivate: [AuthGuard] },
     { path: 'create', component: PostCreateComponent, canActivate: [AuthGuard] },
     { path: 'edit/:postId', component: PostCreateComponent, canActivate: [AuthGuard] },

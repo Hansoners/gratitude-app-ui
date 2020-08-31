@@ -1,0 +1,41 @@
+.title-section {
+  padding: 25px 0 50px;
+  background-image: url("src/assets/confetti.svg") !important;
+  background-position-y: 40px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  font-family: "Proxima Nova Rg";
+  margin: 50px;
+  color: rgb(45, 45, 45);
+  font-size: 3.3em;
+  font-weight: bold;
+}
+
+.content-text {
+  font-family: "Proxima Nova Rg";
+  line-height: 2;
+  font-size: 1.2em;
+  color: grey;
+  font-weight: 400;
+}
+
+.btn-wrapper {
+  margin: 50px;
+  text-align: center;
+}
+
+.little-text {
+  margin-top: 60px;
+  color: grey;
+}
+
+i {
+  margin: 0 3px;
+}
