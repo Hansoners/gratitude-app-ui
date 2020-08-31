@@ -3,7 +3,6 @@ import { PostViewComponent } from './posts/post-view/post-view.component';
 import { PostHomeComponent } from './posts/post-home/post-home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { AuthGuard } from './auth/auth.guard';
