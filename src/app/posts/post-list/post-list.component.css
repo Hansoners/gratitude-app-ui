@@ -61,14 +61,21 @@
 }
 
 .empty-wrapper {
-  margin: 30px auto;
+  margin: 40px auto;
   width: 80%;
   text-align: center;
 }
 
 .animation-wrapper {
+  position: relative;
+  top: -50px;
   width: 400px;
   margin: auto;
+}
+
+#cta-btn {
+  position: relative;
+  top: -80px;
 }
 
 .plus-wrapper {
