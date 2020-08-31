@@ -10,11 +10,10 @@
 }
 
 .form-wrapper {
-  max-width: 600px;
+  width: 400px;
 }
 
 .small-text {
-  margin: 10px;
   color: grey;
   font-size: 1em;
 }
