@@ -86,6 +86,7 @@ export class AuthService {
         this.router.navigate(['/']);
         clearTimeout(this.tokenTimer);
         this.clearAuthData();
+        this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'You\'ve logged out.' });
       }
     });
   }
