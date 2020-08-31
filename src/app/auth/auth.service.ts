@@ -31,7 +31,6 @@ export class AuthService {
     this.http.post(BACKEND_URL + 'register', authData)
       .subscribe(response => {
         this.loginUser(email, password);
-        this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'You\'re registered!' });
       }, error => {
         this.authStatusListener.next(false);
         this.messageService.add({ severity: 'error', summary: 'Error!', detail: 'Registration failed.' });
@@ -53,6 +52,7 @@ export class AuthService {
           const expiration = new Date(now.getTime() + expiresInDuration * 1000);
           this.saveAuthData(this.token, expiration, this.userId);
           this.router.navigate(['/app']);
+          this.messageService.add({ severity: 'success', summary: 'Success!', detail: 'You\'re logged in!' });
         }
       }, error => {
         this.authStatusListener.next(false);
