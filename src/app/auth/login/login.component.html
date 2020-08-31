@@ -1,29 +1,34 @@
-<div class="form-wrapper animate__animated animate__fadeIn">
-    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
-        <p-card header="Login to your account">
-            <div class="p-col-12">
-                <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                    <input name="email" ngModel type="email" required email pInputText placeholder="Email"
-                        #emailInput="ngModel">
+<div class="container">
+    <div class="form-wrapper animate__animated animate__fadeIn">
+        <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+            <div class="login-container">
+                <div class="login-title">Login</div>
+                <div class="p-col-12">
+                    <div class="form-title">Email Address</div>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input name="email" ngModel type="email" required email pInputText placeholder="Email"
+                            #emailInput="ngModel">
+                    </div>
                 </div>
+                <div class="p-col-12">
+                    <div class="form-title">Password</div>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                        <input name="password" ngModel type="password" required pInputText placeholder="Password"
+                            #passwordInput="ngModel" />
+                    </div>
+                </div>
+                <p-footer>
+                    <div class="p-col-12 center">
+                        <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+                        <button *ngIf="!isLoading" pButton pRipple class="p-button-lg p-button-rounded" type="submit"
+                            id="submit-btn" type="submit" label="Login" icon="pi pi-check" iconPos="left"></button>
+                    </div>
+                </p-footer>
             </div>
-            <div class="p-col-12">
-                <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
-                    <input name="password" ngModel type="password" required pInputText placeholder="Password"
-                        #passwordInput="ngModel" />
-                </div>
-            </div>
-            <p-footer>
-                <div class="p-col-12 center">
-                    <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
-                    <button *ngIf="!isLoading" pButton pRipple class="p-button-lg p-button-rounded" type="submit" id="submit-btn"
-                        type="submit" label="Login" icon="pi pi-check" iconPos="left"></button>
-                </div>
-            </p-footer>
-        </p-card>
-    </form>
-    <div class="small-text"><i>Don't have an account? Click <a routerLink="/auth/register">here</a> to register.</i>
+        </form>
+        <div class="small-text"><i>Don't have an account? Click <a routerLink="/auth/register">here</a> to register.</i>
+        </div>
     </div>
 </div>
