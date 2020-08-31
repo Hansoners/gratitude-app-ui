@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid form.' });
       return;
     }
+    this.isLoading = true;
     this.authService.loginUser(form.value.email, form.value.password);
   }
 
