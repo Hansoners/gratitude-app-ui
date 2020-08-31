@@ -1,4 +1,40 @@
-<div class="form-wrapper animate__animated animate__fadeIn">
+<div class="container">
+    <div class="form-wrapper animate__animated animate__fadeIn">
+        <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+            <div class="login-container">
+                <div class="login-title">Signup</div>
+                <div class="p-col-12">
+                    <div class="form-title">Email Address</div>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input name="email" ngModel type="email" required email pInputText placeholder="Email"
+                            #emailInput="ngModel">
+                    </div>
+                </div>
+                <div class="p-col-12">
+                    <div class="form-title">Password</div>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+                        <input name="password" ngModel type="password" required pInputText placeholder="Password"
+                            #passwordInput="ngModel" />
+                    </div>
+                </div>
+                <p-footer>
+                    <div class="p-col-12 center">
+                        <p-progressSpinner *ngIf="isLoading"></p-progressSpinner>
+                        <button *ngIf="!isLoading" pButton pRipple class="p-button-lg p-button-rounded" type="submit"
+                            id="submit-btn" type="submit" label="Signup" icon="pi pi-check" iconPos="left"></button>
+                    </div>
+                </p-footer>
+            </div>
+            <div class="small-text"><i>Passwords are 🧂 and hashed with</i> <i class="fa fa-heart heart"></i>
+                <i>using bcrypt.</i>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- <div class="form-wrapper animate__animated animate__fadeIn">
     <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
         <p-card header="Register your account">
             <div class="p-col-12">
@@ -26,4 +62,4 @@
     </form>
     <div class="small-text"><i>Passwords are 🧂 and hashed with</i> ❤️
     <i>using bcrypt.</i></div>
-</div>
+</div> -->

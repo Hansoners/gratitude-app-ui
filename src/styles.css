@@ -3,13 +3,14 @@
 
 html {
   height: 100%;
-  background-color: rgb(252, 252, 252);
+  /* background-color: rgb(252, 252, 252); */
   /* background-color: #f9f9f9; */
   overflow-y: scroll;
 }
 
 * {
-  font-family: Roboto;
+  font-family: "Proxima Nova Rg";
+  /* font-family: Roboto; */
 }
 
 body {

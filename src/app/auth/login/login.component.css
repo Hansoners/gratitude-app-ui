@@ -1,16 +1,37 @@
 .center {
-    text-align: center;
+  text-align: center;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-wrapper {
-    margin: auto;
-    width: 50%;
-    max-width: 800px;
-    min-width: 400px;
+  width: 400px;
 }
 
 .small-text {
-    margin: 10px;
-    color: grey;
-    font-size: 1em;
+  color: grey;
+  font-size: 1em;
+}
+
+.login-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#submit-btn {
+  margin: 20px;
+}
+
+.form-title {
+  font-family: "Proxima Nova Lt";
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
